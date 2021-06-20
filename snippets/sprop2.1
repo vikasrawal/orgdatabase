@@ -1,13 +1,14 @@
 # -*- mode: snippet -*-
 # name: sprop2.1
 # key: <sprop2.1
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
 # --
 *** Plot ${1:plotno}
-    :PROPERTIES:
-    :PlotNo: ${1}
-    :Area: ${2:areainacres}
-    :IrrigationSource:  ${3:$$(yas-choose-value '("Tubewell" "Canal" "Dug well" "None"))}
-    :IrrigationLift:  ${4:$$(yas-choose-value '("Diesel" "Electricity" "Manual" "Animal" "Flow" "None"))}
-    :Value: ${5:valueinrs}
-    :END:
+:PROPERTIES:
+:PlotNo: ${1}
+:Area: ${2:areainacres}
+:IrrigationSource:  ${3:$$(yas-choose-value '("Tubewell" "Canal" "Dug well" "None"))}
+:IrrigationLift:  ${4:$$(yas-choose-value '("Diesel" "Electricity" "Manual" "Animal" "Flow" "None"))}
+:Value: ${5:valueinrs}
+:END:
     $0

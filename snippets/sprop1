@@ -1,6 +1,7 @@
 # -*- mode: snippet -*-
 # name: sprop1
 # key: <sprop1
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
 # --
 
 * ${1:householdnumber}
@@ -20,3 +21,4 @@
 :Lattitude: ${7:lattitude}
 :Longitude: ${8:longitude}
 :END:
+   $0

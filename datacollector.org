@@ -1,0 +1,50 @@
+# -*- mode: Org; org-use-property-inheritance: t -*-
+#+TITLE: Baseline Survey in Faridabad, 2020
+#+AUTHOR: Household Number: 1
+#+DATE:
+
+
+
+*  Collect Data
+** Block 1
+#+BEGIN: propview :id global :conds ((= BLOCK 1)) :inherit (ID) :cols (ID NAMEHEADOFHOUSEHOLD SEXHEADOFHOUSEHOLD CASTE SOCIALGROUP CURRENTADDRESS LATTITUDE LONGITUDE)
+#+NAME: introduction
+| ID | NAMEHEADOFHOUSEHOLD | SEXHEADOFHOUSEHOLD | CASTE       | SOCIALGROUP | CURRENTADDRESS          | LATTITUDE | LONGITUDE |
+|----+---------------------+--------------------+-------------+-------------+-------------------------+-----------+-----------|
+|  1 | "sldkjf"            | "Male"             | "slkfjlaks" | "SC"        | "566, Paschimabad, JNU" |         1 |        10 |
+|  2 | "lsdkjfl"           | "Male"             | "slkfjlaks" | "OBC"       | "cc"                    |         1 |        10 |
+|----+---------------------+--------------------+-------------+-------------+-------------------------+-----------+-----------|
+|    |                     |                    |             |             |                         |           |           |
+#+END:
+** Block 2
+#+BEGIN: propview :id global :conds ((= BLOCK 2)) :inherit (ID BLOCK) :cols (ID BLOCK PLOTNO AREA IRRIGATIONSOURCE IRRIGATIONLIFT VALUE)
+#+NAME: land
+| ID | BLOCK | PLOTNO | AREA | IRRIGATIONSOURCE | IRRIGATIONLIFT     |   VALUE |
+|----+-------+--------+------+------------------+--------------------+---------|
+|  1 |     2 |      0 |    0 | 0                | 0                  |       0 |
+|  1 |     2 |      1 |    2 | "Tubewell"       | "Electricity"      | 1000000 |
+|  1 |     2 |      2 |  1.1 | "Tubewell"       | "Electricity"      |  500000 |
+|  1 |     2 |      3 |    2 | "Tubewell"       | "Electricity"      | 2000000 |
+|  1 |     2 |      4 |    2 | "Tubewell"       | "Electricity"      |  200000 |
+|  1 |     2 |      5 |    2 | "Tubewell Canal" | "Electricity Flow" |  100000 |
+|  2 |     2 |      0 |    0 | 0                | 0                  |       0 |
+|  2 |     2 |      1 |    2 | "Tubewell"       | "Electricity"      | 1000000 |
+|  2 |     2 |      2 |  1.1 | "Tubewell"       | "Electricity"      |  500000 |
+|  2 |     2 |      3 |    2 | "Tubewell"       | "Electricity"      | 2000000 |
+|  2 |     2 |      4 |    2 | "Tubewell"       | "Electricity"      |  200000 |
+|  2 |     2 |      5 |    2 | "Tubewell Canal" | "Electricity Flow" |  100000 |
+|----+-------+--------+------+------------------+--------------------+---------|
+|    |       |        |      |                  |                    |         |
+#+END:
+
+** Exports
+
+#+NAME: processing
+#+begin_src R :results silent :exports none :var intro=introduction land=land :session rorg
+  write.table(intro,"datatables/intro.csv",sep="|",row.names=FALSE) # Introduction
+  land[land$PLOTNO!=0,]->land
+  write.table(land,"datatables/land.csv",sep="|",row.names=FALSE) #Current ownership holding
+#+end_src
+
+
+#+INCLUDE: orgdatabase.org :minlevel 1

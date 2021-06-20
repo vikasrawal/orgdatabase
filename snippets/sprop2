@@ -1,6 +1,7 @@
 # -*- mode: snippet -*-
 # name: sprop2
 # key: <sprop2
+# expand-env: ((yas-indent-line 'fixed) (yas-wrap-around-region 'nil))
 # --
 
 ** Curernt Ownership Holding of Land

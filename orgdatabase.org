@@ -1,41 +1,6 @@
-# -*- mode: Org; org-use-property-inheritance: t -*-
 #+TITLE: Baseline Survey in Faridabad, 2020
 #+AUTHOR: Household Number: 1
 #+DATE:
-
-*  Collect Data
-** Block 1
-#+BEGIN: propview :id global :conds ((= BLOCK 1)) :inherit (ID) :cols (ID NAMEHEADOFHOUSEHOLD SEXHEADOFHOUSEHOLD CASTE SOCIALGROUP CURRENTADDRESS LATTITUDE LONGITUDE)
-#+NAME: introduction
-| ID | NAMEHEADOFHOUSEHOLD | SEXHEADOFHOUSEHOLD | CASTE       | SOCIALGROUP | CURRENTADDRESS          | LATTITUDE | LONGITUDE |
-|----+---------------------+--------------------+-------------+-------------+-------------------------+-----------+-----------|
-|  1 | "sldkjf"            | "Male"             | "slkfjlaks" | "SC"        | "566, Paschimabad, JNU" |         1 |        10 |
-|  2 | "lsdkjfl"           | "Male"             | "slkfjlaks" | "OBC"       | "cc"                    |         1 |        10 |
-|----+---------------------+--------------------+-------------+-------------+-------------------------+-----------+-----------|
-|    |                     |                    |             |             |                         |           |           |
-#+END:
-** Block 2
-#+BEGIN: propview :id global :conds ((= BLOCK 2)) :inherit (ID BLOCK) :cols (ID BLOCK PLOTNO AREA IRRIGATIONSOURCE IRRIGATIONLIFT VALUE)
-#+NAME: land
-| ID | BLOCK | PLOTNO | AREA | IRRIGATIONSOURCE | IRRIGATIONLIFT |   VALUE |
-|----+-------+--------+------+------------------+----------------+---------|
-|  1 |     2 |      0 |    0 | 0                | 0              |       0 |
-|  1 |     2 |      1 |    2 | "Tubewell"       | "Electricity"  | 1000000 |
-|  1 |     2 |      3 |  1.1 | "Tubewell"       | "Electricity"  |  500000 |
-|----+-------+--------+------+------------------+----------------+---------|
-|    |       |        |      |                  |                |         |
-#+END:
-
-** Exports
-
-#+NAME: processing
-#+begin_src R :results silent :exports none :var intro=introduction land=land :session rorg
-  write.table(intro,"datatables/intro.csv",sep="|",row.names=FALSE)
-  land[land$PLOTNO!=0,]->land
-  write.table(land,"datatables/land.csv",sep="|",row.names=FALSE)
-#+end_src
-
-
 
 * 1
 :PROPERTIES:
@@ -49,13 +14,12 @@
 :SexHeadOfHousehold: Male
 :CASTE:    slkfjlaks
 :SOCIALGROUP: SC
-:CURRENTADDRESS: 566, Paschimabad, JNU
 :Lattitude: 1
+:CURRENTADDRESS:
 :Longitude: 10
-:CURRENTADDRESS_ALL: aljdalksjd aa bb cc
 :END:
 
-** Curernt Ownership Holding of Land
+** Current Ownership Holding of Land
 :PROPERTIES:
 :COLUMNS:  %ID %PlotNo %Area %IrrigationSource %IrrigationLift %Value
 :Block:    2
@@ -78,7 +42,35 @@
 :IrrigationLift: Electricity
 :Value:    500000
 :END:
+*** Plot 3
+:PROPERTIES:
+:PlotNo:   3
+:Area:     2
+:IrrigationSource: Tubewell
+:IrrigationLift: Electricity
+:Value:    2000000
+:IrrigationSource_ALL: Tubewell Canal Dugwell None
+:IrrigationLift_All: Diesel Electricity Manual Animal Flow None
+:END:
+*** Plot 4
+:PROPERTIES:
+:PlotNo:   4
+:Area:     2
+:IrrigationSource: Tubewell
+:IrrigationLift: Electricity
+:Value:    200000
+:END:
 
+
+
+*** Plot 5
+:PROPERTIES:
+:PlotNo:   5
+:Area:     2
+:IrrigationSource: Tubewell Canal
+:IrrigationLift: Electricity Flow
+:Value:    100000
+:END:
 * 2
 :PROPERTIES:
 :ID:       2
@@ -95,4 +87,56 @@
 :Lattitude: 1
 :Longitude: 10
 :CURRENTADDRESS_ALL: aljdalksjd aa bb cc
+:END:
+** Current Ownership Holding of Land
+:PROPERTIES:
+:COLUMNS:  %ID %PlotNo %Area %IrrigationSource %IrrigationLift %Value
+:Block:    2
+:END:
+*** Plot 1
+:PROPERTIES:
+:Block:    2
+:PlotNo:   1
+:Area:     2
+:IrrigationSource: Tubewell
+:IrrigationLift: Electricity
+:Value:    1000000
+:END:
+*** Plot 2
+:PROPERTIES:
+:Block:    2
+:PlotNo:   2
+:Area:     1.1
+:IrrigationSource: Tubewell
+:IrrigationLift: Electricity
+:Value:    500000
+:END:
+*** Plot 3
+:PROPERTIES:
+:PlotNo:   3
+:Area:     2
+:IrrigationSource: Tubewell
+:IrrigationLift: Electricity
+:Value:    2000000
+:IrrigationSource_ALL: Tubewell Canal Dugwell None
+:IrrigationLift_All: Diesel Electricity Manual Animal Flow None
+:END:
+*** Plot 4
+:PROPERTIES:
+:PlotNo:   4
+:Area:     2
+:IrrigationSource: Tubewell
+:IrrigationLift: Electricity
+:Value:    200000
+:END:
+
+
+
+*** Plot 5
+:PROPERTIES:
+:PlotNo:   5
+:Area:     2
+:IrrigationSource: Tubewell Canal
+:IrrigationLift: Electricity Flow
+:Value:    100000
 :END:
