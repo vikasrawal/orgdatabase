@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: ssersurvey
+# key: <ssersurvey
+# --
+#+TITLE: Baseline Survey in Faridabad, 2020
+#+AUTHOR: Household Number: ${1:household_number}
+#+DATE:

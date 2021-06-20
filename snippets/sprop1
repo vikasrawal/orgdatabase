@@ -1,0 +1,22 @@
+# -*- mode: snippet -*-
+# name: sprop1
+# key: <sprop1
+# --
+
+* ${1:householdnumber}
+:PROPERTIES:
+:ID: $1
+:END:
+
+** Basic Details of the Household
+:PROPERTIES:
+:COLUMNS:  %ID %25NameHeadOfHousehold %SexHeadOfHousehold %Caste %SocialGroup %50CurrentAddress %Lattitude %Longitude
+:Block:    1
+:Name_Head_of_Household: ${2:name_of_head}
+:Sex_Head_of_Household: ${3:$$(yas-choose-value '("Male" "Female"))}
+:Caste: ${4:caste}
+:SocialGroup: ${5:$$(yas-choose-value '("SC" "ST" "OBC" "Other"))}
+:CurrentAddress: ${6:address}
+:Lattitude: ${7:lattitude}
+:Longitude: ${8:longitude}
+:END:

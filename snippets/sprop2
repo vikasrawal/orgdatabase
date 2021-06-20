@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: sprop2
+# key: <sprop2
+# --
+
+** Curernt Ownership Holding of Land
+:PROPERTIES:
+:Block:    2
+:END:
