@@ -139,7 +139,6 @@
 :END:
 *** Plot 1
 :PROPERTIES:
-:Block:    2
 :PlotNo:   1
 :Area:     2
 :IrrigationSource: Tubewell
@@ -148,7 +147,6 @@
 :END:
 *** Plot 2
 :PROPERTIES:
-:Block:    2
 :PlotNo:   2
 :Area:     1.1
 :IrrigationSource: Tubewell
@@ -173,9 +171,6 @@
 :IrrigationLift: Electricity
 :Value:    200000
 :END:
-
-
-
 *** Plot 5
 :PROPERTIES:
 :PlotNo:   5
