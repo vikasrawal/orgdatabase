@@ -6,7 +6,9 @@ Apart from free flowing entering of data, the system provides for data entry usi
 
 Data are entered with the help of a collection of snippets, collected using [[https://orgmode.org/worg/org-contrib/org-collector.html][org-collector.el]], and finally exported using a source code block using an external tool like R, MySQL or Postgres. Git can be used to track the work and for collaboration.
 
-The data tables are organised as headings, with each record/row of data being stored as a subheading, and actual data as properties of these sub-headings. Relational integrity is partially built into the database though property inheritance in org. More comprehensive relational integrity can be created by adding relational integrity checks in R, which can be made to throw errors if relational integrity breaks anywhere in the database. While this would not happen real-time while data are being entered, the workflow can be so organised that the data are compiled and tested frequently, and errors displayed at short intervals.
+The data are organised under headings, with each record/row of data being stored as a subheading, and actual data as properties of these sub-headings. The first level of heading is for the primary objects of the data (say, persons/households/firms interviewed in a survey, buildings in a municipal database, clients in a company database), and subheadings under these main headings are for data that belong to different data tables.
+
+Relational integrity is partially built into the database though property inheritance in org. More comprehensive relational integrity can be created by adding relational integrity checks in R/MySQL/Postgres, which can be made to throw errors if relational integrity breaks anywhere in the database. While this would not happen real-time while data are being entered, the workflow can be so organised that the data are compiled and tested frequently, and errors displayed at short intervals.
 
 * Data entry using Yasnippets
 
