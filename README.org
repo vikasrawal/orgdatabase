@@ -1,6 +1,6 @@
 #+TITLE: A Simple Database Created Using Orgmode
 
-This is a database created on org-mode using [[https://github.com/joaotavora/yasnippet][YASnippets]] and [[https://orgmode.org/worg/org-contrib/org-collector.html][org-collector.el]]. The main purpose of this database is to enter the data in org-mode, and then export it into any desired format.
+This is a database created on org-mode using [[https://github.com/joaotavora/yasnippet][YASnippet]] and [[https://orgmode.org/worg/org-contrib/org-collector.html][org-collector.el]]. The main purpose of this database is to enter the data in org-mode, and then export it into any desired format.
 
 Apart from free entering of data, the system provides for data entry using predefined choices.
 
