@@ -1,0 +1,21 @@
+#+TITLE: A Simple Database Created Using Orgmode
+
+This is a database created on org-mode using [[https://github.com/joaotavora/yasnippet][Yasnippets]] and [[https://orgmode.org/worg/org-contrib/org-collector.html][org-collector.el]]. The main purpose of this database is to enter the data in org-mode, and then export it into any desired format.
+
+Apart from free entering of data, the system provides for data entry using predefined choices.
+
+Data are entered with the help of a collection of snippets, and collected using org-collector.org, and exported using an external tool like R or SQL. Git can be used to track the work and for collaboration.
+
+The data tables are organised as headings, with each record/row of data being stored as a subheading, and actual data as properties of these sub-headings. Relational integrity is partially built into the database though property inheritance in org. More comprehensive relational integrity can be created by adding relational integrity checks in R, which can be made to throw errors if relational integrity breaks anywhere in the database. While this would not happen real-time while data are being entered, the workflow can be so organised that the data are compiled and tested frequently, and errors displayed at short intervals.
+
+* Data entry using Yasnippets
+
+The data entry form is organised into blocks and sub-blocks, with a snippet designed to assist entry for each of them. You create a blank record using the corresponding shortcut key (say, <sprop2.1 for inserting data for Block 2.1). This opens a snippet with fields corresponding to Block 2.1, which you can tab through to insert a row of data). Snippets can be designed to give choices where data must belong to one of the pre-specified categories.
+
+Column view (C-c C-x C-c) can be used to see properties of a sub-tree in a tabular form (q quits the column view).
+
+Snippets need to be put into the directory ~/.emacs.d/snippets/org-mode. I prefer keeping them in my database directory as a sub-directory called "snippets", and symlink them to a sub-directory under ~/.emacs.d/snippets/org-mode. This sample database has a few demo snippets. You can create your own snippets, one for each Block in your form, based on these demo snippets.
+
+* Compiling data
+
+org-collector.el is used to compile all the data into org-tables. [[file::orgdatabase.org]] has demo blocks for compiling data. Finally, an R source code block exports all the compiled tables into csv files. One could easily export the data into any other format. The code block could be expanded to introduce relational integrity checks.

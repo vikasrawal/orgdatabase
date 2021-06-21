@@ -6,8 +6,8 @@
 *  Collect Data
 ** Block 1
 
-#+NAME: introduction
 #+BEGIN: propview :id global :conds ((= BLOCK 1)) :inherit (ID) :cols (ID NAMEHEADOFHOUSEHOLD SEXHEADOFHOUSEHOLD CASTE SOCIALGROUP CURRENTADDRESS LATTITUDE LONGITUDE)
+#+NAME: introduction
 | ID | NAMEHEADOFHOUSEHOLD | SEXHEADOFHOUSEHOLD | CASTE       | SOCIALGROUP | CURRENTADDRESS | LATTITUDE | LONGITUDE |
 |----+---------------------+--------------------+-------------+-------------+----------------+-----------+-----------|
 |  1 | "sldkjf"            | "Male"             | "slkfjlaks" | "SC"        | ""             |         1 |        10 |
