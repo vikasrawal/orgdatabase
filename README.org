@@ -22,7 +22,7 @@ Snippets need to be put into the directory ~/.emacs.d/snippets/org-mode. I prefe
 #+end_src
 
 
-This sample database has a few demo snippets. You can create your own snippets, one for each Block in your form, based on these demo snippets.
+This sample database has a few demo snippets. You will have to create your own snippets, one for each Block in your form, for which you can use these demo snippets as samples.
 
 * Compiling data
 
