@@ -28,4 +28,4 @@ This sample database has a few demo snippets. You will have to create your own s
 
 * Compiling data
 
-org-collector.el is used to compile all the data into org-tables. [[file::orgdatabase.org]] has demo blocks for compiling data. Finally, an R source code block exports all the compiled tables into csv files. One could easily export the data into any other format. The code block could be expanded to introduce relational integrity checks.
+[[https://orgmode.org/worg/org-contrib/org-collector.html][org-collector.el]] is used to compile all the data into org-tables. [[file:orgdatabase.org]] has demo blocks for compiling data. Finally, an R source code block exports all the compiled tables into csv files. One could easily export the data into any other format. The code block could be expanded to introduce relational integrity checks.
